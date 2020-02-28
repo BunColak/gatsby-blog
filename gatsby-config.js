@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Bun Colak Blog`,
+    description: `Personal Blog`,
+    author: `@buncolak`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,15 +30,31 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [{
+          resolve: `gatsby-remark-vscode`,
+          // All options are optional. Defaults shown here.
+          options: {
+            theme: 'Dark+ (default dark)', // Read on for list of included themes. Also accepts object and function forms.
+            wrapperClassName: '',   // Additional class put on 'pre' tag. Also accepts function to set the class dynamically.
+            injectStyles: true,     // Injects (minimal) additional CSS for layout and scrolling
+            extensions: [],         // Extensions to download from the marketplace to provide more languages and themes
+            languageAliases: {},    // Map of custom/unknown language codes to standard/known language codes
+            logLevel: 'warn'       // Set to 'info' to debug if something looks wrong
+          }
+        }]
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Bun Colak Blog`,
+        short_name: `BunBlog`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#5a67d8`,
+        theme_color: `#5a67d8`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

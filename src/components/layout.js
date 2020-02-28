@@ -7,11 +7,15 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import Header from "./Header"
 
 const Layout = ({ children }) => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto pb-20">
+      <div className="mx-4">
+        <Header />
         <main>{children}</main>
+      </div>
     </div>
   )
 }
