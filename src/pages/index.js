@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PostListItem from "../components/PostListItem"
 
 const IndexPage = ({ data }) => {
   const edges = data.allMarkdownRemark.edges || []
@@ -12,18 +13,8 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       {edges.map(edge => {
         const node = edge.node
-        const tags = node.frontmatter.tags || []
 
-        return (
-          <div className="mt-10" key={node.id}>
-            <Link className="text-lg" to={node.fields.slug}>{node.frontmatter.title}</Link>
-            <div className="text-gray-600 text-sm">
-              <span>{node.frontmatter.date}</span>
-              {tags.map(tag => <span className="ml-4 italic" key={tag}>#{tag}</span>)}
-            </div>
-            <p className="leading-snug text-sm text-gray-900 mt-1">{node.excerpt}</p>
-          </div>
-        )
+        return <PostListItem node={node} />
       })}
     </Layout>
   )
@@ -43,7 +34,7 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt
+          excerpt(pruneLength: 300)
         }
       }
     }

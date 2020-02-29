@@ -20,13 +20,13 @@ exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
-            frontmatter {
-              tags
-            }
             fields {
               slug
             }
           }
+        }
+        group(field:frontmatter___tags) {
+          fieldValue
         }
       }
     }
@@ -38,6 +38,16 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/components/PostLayout.js`),
       context: {
         slug: node.fields.slug,
+      }
+    })
+  })
+
+  result.data.allMarkdownRemark.group.forEach(({ fieldValue }) => {
+    createPage({
+      path: fieldValue,
+      component: path.resolve(`./src/components/TagLayout.js`),
+      context: {
+        tag: fieldValue,
       }
     })
   })

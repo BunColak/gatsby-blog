@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
-const Header = () => {
+const Header = ({data}) => {    
     return (
         <nav className="w-full flex justify-between h-16 items-center text-xl">
             <div>
-                <Link className="border-0" to='/'>Bün Colak's Personal Blog</Link>
+                <Link className="border-0 no-underline" to='/'>Bün Colak's Personal Blog</Link>
             </div>
         </nav>
     )
