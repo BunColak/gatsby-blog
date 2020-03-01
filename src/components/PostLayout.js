@@ -8,7 +8,7 @@ const BlogLayout = ({ data }) => {
   const tags = post.frontmatter.tags || []
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <h1 className="text-center mb-2">{post.frontmatter.title}</h1>
       <div className="text-center mb-4 text-gray-600 text-sm">
         {post.frontmatter.date}
@@ -30,6 +30,7 @@ export const query = graphql`
         date
         tags
       }
+      excerpt(pruneLength: 300)
     }
   }
 `
