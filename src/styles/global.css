@@ -15,11 +15,21 @@ body {
 }
 
 p {
-    @apply my-2;
+    @apply my-4;
 }
 
 pre {
     @apply my-4;
+}
+
+pre > code {
+    background-color: inherit;
+    color: inherit;
+    @apply border-0 font-normal;
+}
+
+code {
+    @apply bg-gray-200 border font-bold px-2 text-indigo-600;
 }
 
 a {

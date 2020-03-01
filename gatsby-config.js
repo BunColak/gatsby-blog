@@ -15,12 +15,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [],
-      },
-    },
     'gatsby-plugin-postcss',
     {
       resolve: `gatsby-transformer-remark`,
@@ -35,6 +29,13 @@ module.exports = {
             extensions: [],         // Extensions to download from the marketplace to provide more languages and themes
             languageAliases: {},    // Map of custom/unknown language codes to standard/known language codes
             logLevel: 'warn'       // Set to 'info' to debug if something looks wrong
+          }
+        },
+        {
+          resolve: "gatsby-remark-external-links",
+          options: {
+            target: "_blank",
+            rel: "nofollow noopener noreferrer"
           }
         }]
       }

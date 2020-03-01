@@ -11,7 +11,10 @@ const BlogLayout = ({ data }) => {
       <SEO title={post.frontmatter.title} />
       <h1 className="text-center mb-2">{post.frontmatter.title}</h1>
       <div className="text-center mb-4 text-gray-600 text-sm">
-        {post.frontmatter.date} {tags.map(tag => <Link className="mx-2 font-bold" to={`/${tag}`} key={tag}>#{tag}</Link>)}
+        {post.frontmatter.date}
+        <div className="flex flex-wrap justify-center">
+          {tags.map(tag => <Link className="mx-2 font-bold" to={`/${tag}`} key={tag}>#{tag}</Link>)}
+        </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>

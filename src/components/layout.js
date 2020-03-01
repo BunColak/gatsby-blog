@@ -12,7 +12,7 @@ import Header from "./Header"
 const Layout = ({ children }) => {
   return (
     <div className="container mx-auto pb-20">
-      <div className="mx-4">
+      <div className="mx-4 md:mx-auto md:w-2/3">
         <Header />
         <main>{children}</main>
       </div>
