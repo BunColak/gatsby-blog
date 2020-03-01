@@ -38,7 +38,7 @@ class MyAwesomeClass {
 
 Since both ORM and GraphQL can use the same class independent from each other, we can generate our classes and use them everywhere! For demonstration purposes, I have created an API like Twitter, with lots and lots of functionality missing.
 
-Here is the repository: [GitHub](https://github.com/buncolak/type-blog-backend)
+Here is the repository: [GitHub](https://github.com/buncolak/typeorm-graphql-backend)
 
 Here is my User class:
 

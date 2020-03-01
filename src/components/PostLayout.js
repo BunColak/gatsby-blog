@@ -13,7 +13,7 @@ const BlogLayout = ({ data }) => {
       <div className="text-center mb-4 text-gray-600 text-sm">
         {post.frontmatter.date}
         <div className="flex flex-wrap justify-center">
-          {tags.map(tag => <Link className="mx-2 font-bold" to={`/${tag}`} key={tag}>#{tag}</Link>)}
+          {tags.map(tag => <Link className="mx-2 font-bold" to={`/tag/${tag}`} key={tag}>#{tag}</Link>)}
         </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />

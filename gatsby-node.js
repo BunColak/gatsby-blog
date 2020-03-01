@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allMarkdownRemark.group.forEach(({ fieldValue }) => {
     createPage({
-      path: fieldValue,
+      path: `tag/${fieldValue}`,
       component: path.resolve(`./src/components/TagLayout.js`),
       context: {
         tag: fieldValue,
