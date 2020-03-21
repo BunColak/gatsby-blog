@@ -25,7 +25,7 @@ pre {
 pre > code {
     background-color: inherit;
     color: inherit;
-    @apply border-0 font-normal;
+    @apply border-0 font-normal p-0;
 }
 
 code {

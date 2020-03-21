@@ -1,8 +1,8 @@
 ---
 title: GraphQL API with Typescript / TypeORM + TypeGraphQL
 author: me
-tags: ['graphql', 'typescript', 'typeorm', 'backend',  'backend', 'backend']
-date: "01.03.2020"
+tags: ['graphql', 'typescript', 'typeorm', 'backend']
+date: "2020-03-01"
 ---
 
 I like GraphQL, a lot. Especially if I'm doing a small project and don't want to deal with defining endpoints and optimizing them for their usage. I don't want to make 15 different XHR requests just to show some information. This, of course, can be solved with better API design, but this isn't an ideal world and the sky is not always blue. 

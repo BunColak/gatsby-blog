@@ -2,7 +2,7 @@
 title: "Yıllık eğlencem: The International"
 author: buncolak
 tags: ["esports", "dota", "eğlence"]
-date: '14.08.2019'
+date: "2019-08-14"
 ---
 
 Çok fazla klasik spor izleyen biri değilim. NBA playoff finalleri ve Şampiyonlar Ligi dışında pek fazla izlediğimi söyleyemem.
