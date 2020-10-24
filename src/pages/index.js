@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import PostListItem from "../components/PostListItem"
 
 const IndexPage = ({ data }) => {
-  const edges = data.allMarkdownRemark.edges || []
+  const edges = data.allSanityBlogPost.edges || []
 
   return (
     <Layout>
@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
       {edges.map(edge => {
         const node = edge.node
 
-        return <PostListItem node={node} />
+        return <PostListItem key={node.releaseDate} node={node} />
       })}
     </Layout>
   )
@@ -22,19 +22,18 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+    allSanityBlogPost(sort: { fields: releaseDate, order: DESC }) {
       edges {
         node {
-          frontmatter {
-            tags
-            title
-            tags
-            date
+          tags {
+            tagTitle
           }
-          fields {
-            slug
+          title
+          releaseDate
+          content
+          slug {
+            current
           }
-          excerpt(pruneLength: 300)
         }
       }
     }

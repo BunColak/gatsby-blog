@@ -1,44 +1,62 @@
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:700&display=swap");
 
 @tailwind base;
 
-h1,h2,h3,h4,h5,h6 {
-    @apply mt-6 mb-3 leading-normal tracking-wide text-indigo-700;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 700;
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mt-6 mb-3 leading-normal tracking-wide text-indigo-700;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
 }
 
 body {
-    @apply leading-7 tracking-wide;
-    font-family: 'Montserrat', sans-serif;
+  @apply leading-7 tracking-wide;
+  font-family: "Montserrat", sans-serif;
 }
 
 p {
-    @apply my-4;
+  @apply my-4;
 }
 
 pre {
-    @apply my-4;
+  @apply my-4;
 }
 
 pre > code {
-    background-color: inherit;
-    color: inherit;
-    @apply border-0 font-normal p-0;
+  background-color: inherit;
+  color: inherit;
+  @apply border-0 font-normal p-0;
 }
 
 code {
-    @apply bg-gray-200 border font-bold px-2 text-indigo-600;
+  @apply bg-gray-200 border font-bold px-2 text-indigo-600;
 }
 
 a {
-    font-family: 'Source Sans Pro', sans-serif;
-    @apply text-indigo-600 no-underline font-bold border-0 border-b-2 border-indigo-600 border-solid ;
+  font-family: "Source Sans Pro", sans-serif;
+  @apply text-indigo-600 no-underline font-bold border-0 border-b-2 border-indigo-600 border-solid;
 }
 
 a:hover {
-    @apply text-indigo-800;
+  @apply text-indigo-800;
 }
 
 table {
@@ -47,11 +65,12 @@ table {
 }
 
 thead {
-    @apply bg-gray-100;
+  @apply bg-gray-100;
 }
 
-th, td {
-    @apply text-left px-2 py-2 border border-gray-200 border-solid;
+th,
+td {
+  @apply text-left px-2 py-2 border border-gray-200 border-solid;
 }
 
 @tailwind components;

@@ -4,7 +4,7 @@ import SEO from './seo';
 import PostListItem from './PostListItem';
 
 const TagLayout = ({data, pageContext}) => {
-    const posts = data.allMarkdownRemark
+    const posts = data.allSanityBlogPost
     const tag = pageContext.tag
     
     return (
@@ -19,18 +19,18 @@ const TagLayout = ({data, pageContext}) => {
 
 export const query = graphql`
   query($tag: String!){
-    allMarkdownRemark(filter: {frontmatter: {tags: {in: [$tag]}}}) {
+    allSanityBlogPost(filter: {tags: {elemMatch: {tagTitle: {eq: $tag}}}}) {
       edges {
         node {
-          frontmatter {
             title
-            date
-            tags
-          }
-          fields {
-              slug
-          }
-          excerpt(pruneLength: 300)
+            slug {
+              current
+            }
+            releaseDate
+            tags {
+              tagTitle
+            }
+            content
         }
       }
     }

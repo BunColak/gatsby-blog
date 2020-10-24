@@ -1,60 +1,46 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    console.log(node);
-    
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-    createNodeField({
-      node,
-      name: `date`,
-      value: new Date(node.frontmatter.date),
-    })
-  }
-}
+const slugify = require('slugify');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMarkdownRemark {
+      allSanityBlogPost {
         edges {
           node {
-            fields {
-              slug
-            }
+              id
+              slug {
+                current
+              }     
           }
         }
-        group(field:frontmatter___tags) {
-          fieldValue
+      }
+      allSanityTag {
+        edges {
+          node {
+            tagTitle
+          }
         }
       }
     }
   `)
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allSanityBlogPost.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
+      path: node.slug.current,
       component: path.resolve(`./src/components/PostLayout.js`),
       context: {
-        slug: node.fields.slug,
+        id: node.id,
       }
     })
   })
 
-  result.data.allMarkdownRemark.group.forEach(({ fieldValue }) => {
+  result.data.allSanityTag.edges.forEach(({ node }) => {
     createPage({
-      path: `tag/${fieldValue}`,
+      path: `tag/${node.tagTitle}`,
       component: path.resolve(`./src/components/TagLayout.js`),
       context: {
-        tag: fieldValue,
+        tag: node.tagTitle,
       }
     })
   })
