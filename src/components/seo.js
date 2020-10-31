@@ -24,7 +24,7 @@ function SEO({ description, lang, meta, title }) {
         }
         file(relativePath: { eq: "profile.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 120) {
+            fluid(maxWidth: 200) {
               src
             }
           }

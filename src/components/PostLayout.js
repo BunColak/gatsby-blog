@@ -19,7 +19,7 @@ const BlogLayout = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={post.title} description={post.content.substring(0, 300)} />
+      <SEO title={post.title} description={post.content.substring(0, 200)} />
       <h1 className="text-center mb-2">{post.title}</h1>
       <div className="text-center mb-4 text-gray-600 text-sm">
         {post.releaseDate}
