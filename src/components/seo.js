@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            url
           }
         }
         file(relativePath: { eq: "profile.jpg" }) {
@@ -75,7 +76,7 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },{
           name: `twitter:image`,
-          content: file.childImageSharp.fluid.src
+          content: `${site.siteMetadata.url}${file.childImageSharp.fluid.src}`
         }
       ].concat(meta)}
     />
