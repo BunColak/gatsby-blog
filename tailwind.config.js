@@ -5,6 +5,10 @@ module.exports = {
       body: ['Source Sans Pro', 'sans-serif'],
     },
   },
+  purge: {
+    enabled: true,
+    content: ['./**/*.html'],
+  },
   variants: {},
   plugins: [],
   corePlugins: {
