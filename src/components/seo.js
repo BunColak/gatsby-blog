@@ -60,6 +60,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `${site.siteMetadata.url}${file.childImageSharp.fluid.src}`
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
