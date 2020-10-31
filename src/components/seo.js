@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,6 +19,13 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+          }
+        }
+        file(relativePath: { eq: "profile.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 120) {
+              src
+            }
           }
         }
       }
@@ -66,7 +73,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
-        },
+        },{
+          name: `twitter:image`,
+          content: file.childImageSharp.fluid.src
+        }
       ].concat(meta)}
     />
   )
