@@ -21,6 +21,14 @@ module.exports = {
         dataset: `production`,
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-YX5WY7D3VM",
+        head: true,
+        defer: false,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-postcss',
