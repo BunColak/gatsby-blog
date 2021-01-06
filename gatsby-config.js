@@ -22,11 +22,11 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "G-YX5WY7D3VM",
-        head: true,
-        defer: false,
+        trackingIds: [
+          "G-YX5WY7D3VM", // Google Analytics / GA
+        ],
       },
     },
     `gatsby-transformer-sharp`,
