@@ -24,6 +24,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
+        pluginConfig: {
+          head: true
+        },
         trackingIds: [
           "G-YX5WY7D3VM", // Google Analytics / GA
         ],
