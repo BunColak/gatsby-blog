@@ -6,9 +6,10 @@ module.exports = {
     },
   },
   purge: {
-    enabled: true,
+    enabled: false,
     content: ['./src/**/*.js'],
   },
+  darkMode: 'class',
   variants: {},
   plugins: [],
   corePlugins: {

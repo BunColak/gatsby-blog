@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PostListItem from "../components/PostListItem"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import PostListItem from '../components/PostListItem'
 
 const IndexPage = ({ data }) => {
   const edges = data.allSanityBlogPost.edges || []

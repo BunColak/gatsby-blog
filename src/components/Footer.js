@@ -1,11 +1,11 @@
 import React from 'react'
 
 const Footer = () => {
-    return (
+  return (
         <div>
             Hello there
         </div>
-    )
+  )
 }
 
 export default Footer

@@ -44,6 +44,7 @@ module.exports = {
         background_color: `#5a67d8`,
         theme_color: `#5a67d8`,
         display: `minimal-ui`,
+        icon: `${__dirname}/src/images/icon.png`
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

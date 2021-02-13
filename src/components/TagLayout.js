@@ -1,20 +1,21 @@
 import React from 'react'
-import Layout from './layout';
-import SEO from './seo';
-import PostListItem from './PostListItem';
+import { graphql } from 'gatsby'
+import Layout from './layout'
+import SEO from './seo'
+import PostListItem from './PostListItem'
 
-const TagLayout = ({data, pageContext}) => {
-    const posts = data.allSanityBlogPost
-    const tag = pageContext.tag
-    
-    return (
+const TagLayout = ({ data, pageContext }) => {
+  const posts = data.allSanityBlogPost
+  const tag = pageContext.tag
+
+  return (
         <Layout>
             <SEO title={`#${tag}`} />
-            {posts.edges.map(({node}) => {
-                return <PostListItem key={node.id} node={node} />
+            {posts.edges.map(({ node }) => {
+              return <PostListItem key={node.id} node={node} />
             })}
         </Layout>
-    )
+  )
 }
 
 export const query = graphql`
@@ -36,7 +37,5 @@ export const query = graphql`
     }
   }
 `
-
-
 
 export default TagLayout
