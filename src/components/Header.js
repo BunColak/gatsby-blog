@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 
 const Header = () => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme'))
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     if (theme !== localStorage.getItem('theme')) {
